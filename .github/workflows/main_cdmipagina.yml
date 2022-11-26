@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c525a331f6bc49cc8d42a2a793a588f1 }}/dquisiest/cimipagina:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c525a331f6bc49cc8d42a2a793a588f1 }}/cimipagina:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'cdmipagina'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_da415148b572400eb2eecfc33d09df83 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c525a331f6bc49cc8d42a2a793a588f1 }}/dquisiest/cimipagina:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c525a331f6bc49cc8d42a2a793a588f1 }}/cimipagina:${{ github.sha }}'
